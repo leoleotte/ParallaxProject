@@ -41,6 +41,8 @@ public class Enemy extends Entity {
 		 
 			Sizex = 64; Sizey = 64;
 			Speed = 0.20f;
+			SpritePosX = 0;
+			SpritePosY = 1;
 			
 			//BB
 			BBSizeX = 38; BBSizeY = 35;			
@@ -50,11 +52,12 @@ public class Enemy extends Entity {
 			//AI
 			AIState = "Semi-Curve";
 			
-			LoadTexture("Enemy1");
+			LoadTexture("Ships");
 		}
 		
 		
 		LoadAI();
+		LoadEntity();
 	}
 	
 	public void Update(int _delta){

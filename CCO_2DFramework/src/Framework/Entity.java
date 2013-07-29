@@ -15,6 +15,11 @@ public abstract class Entity {
 	protected int Sizex,Sizey;
 	protected String Color;
 	protected boolean[] DirectionalMovement;
+	//Sprite
+	protected int SpriteSizeX, SpriteSizeY;
+	protected int SpritePosX, SpritePosY;
+	protected float Linha, Coluna;
+	//BoundingBox
 	protected BoundingBox BB; protected int BBSizeX, BBSizeY;
 	protected int BBOffsetX, BBOffsetY;
 	//DeltaTime
@@ -42,6 +47,13 @@ public abstract class Entity {
 		BB = new BoundingBox(Posx,Posy,Sizex,Sizey);
 	}
 	
+	public void LoadEntity(){
+		
+		Linha = SpritePosX / 16;
+		Coluna = SpritePosY % 16;		
+		
+	}
+	
 	
 	public void Draw(){
 		
@@ -54,15 +66,21 @@ public abstract class Entity {
 			GL11.glEnable(GL11.GL_TEXTURE_2D);
 			
 			EntityTexture.bind();
+			
+			float u0 = Linha / 16;
+			float u1 = (Linha + 1) / 16;
+
+			float v0 = Coluna / 16;
+			float v1 = (Coluna + 1) / 16; 
 			 
 			GL11.glBegin(GL11.GL_QUADS);
-			GL11.glTexCoord2f(0,0);
+			GL11.glTexCoord2f(u0,v0);
 			GL11.glVertex2f(Posx,Posy);
-			GL11.glTexCoord2f(1,0);
+			GL11.glTexCoord2f(u1,v0);
 			GL11.glVertex2f(Posx+Sizex,Posy);
-			GL11.glTexCoord2f(1,1);
+			GL11.glTexCoord2f(u1,v1);
 			GL11.glVertex2f(Posx+Sizex,Posy+Sizey);
-			GL11.glTexCoord2f(0,1);
+			GL11.glTexCoord2f(u0,v1);
 			GL11.glVertex2f(Posx,Posy+Sizey);
 			GL11.glEnd();
 			

@@ -26,7 +26,8 @@ public class Player extends Entity{
 		Type = _type;
 	
 		
-		LoadTexture("Player");
+		LoadTexture("Ships");
+		LoadEntity();
 	}
 	
 	
@@ -42,6 +43,7 @@ public class Player extends Entity{
 		UpdateWeapons();
 		BB.SetPos(Posx+BBOffsetX, Posy+BBOffsetY);
 		Draw();
+		//DebugBoundingBox("Red");
 		
 		
 	}

@@ -25,19 +25,19 @@ public class Projectile extends Entity {
 		int _BBSizex = 0, _BBSizey = 0;
 		
 		if(Type.equals("Normal")){
-			Sizex = 16; Sizey = 16;
+			Sizex = 64; Sizey = 64;
 			_BBSizex = 12; BBOffsetX = 2;
 			_BBSizey = 12; BBOffsetY = 2;
 			Speed = 0.50f;
 			
-			LoadTexture("Normal_Projectile");
+			LoadTexture("Projectiles");
 		}else if(Type.equals("Repeater")){
-			Sizex = 16; Sizey = 16;
+			Sizex = 64; Sizey = 64;
 			_BBSizex = 12; BBOffsetX = 2;
 			_BBSizey = 12; BBOffsetY = 2;
 			Speed = 0.60f;
 			
-			LoadTexture("Normal_Projectile");
+			LoadTexture("Projectiles");
 		}
 		
 		BB = new BoundingBox(Posx+BBOffsetX,Posy+BBOffsetY,_BBSizex,_BBSizey);
@@ -49,6 +49,7 @@ public class Projectile extends Entity {
 		Movement();
 		BB.SetPos(Posx+BBOffsetX, Posy+BBOffsetY);
 		Draw();
+		//DebugBoundingBox("red");
 		
 		
 		CheckBoundaries();

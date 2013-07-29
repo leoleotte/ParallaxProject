@@ -47,7 +47,7 @@ public class Game {
 			UpdateLevel();
 
 			Display.update();
-			//Display.sync(500);
+			Display.sync(60);
 		}
 		
 		

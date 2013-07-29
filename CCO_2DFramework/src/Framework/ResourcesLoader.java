@@ -26,7 +26,7 @@ public class ResourcesLoader {
 	private boolean AllSoundsLoaded = false;
 	
 	//Textures_Names_IDS_Array
-	private String TextureNameIDs[] = {"Player","Enemy1","Normal_Projectile"};
+	private String TextureNameIDs[] = {"Ships","Projectiles"};
 	private String SoundsNameIDs[] = {"Explosion"};
 
 
@@ -46,9 +46,8 @@ public class ResourcesLoader {
 				
 			try {
 	
-			textures.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("rsc/sprites/player.png")));
-			textures.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("rsc/sprites/enemy.png")));
-			textures.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("rsc/sprites/normal_projectile.png")));
+			textures.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("rsc/sprites/ships.png")));
+			textures.add(TextureLoader.getTexture("PNG", ResourceLoader.getResourceAsStream("rsc/sprites/projectiles.png")));
 			 
 			
 			} catch (IOException e) {
